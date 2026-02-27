@@ -1,334 +1,323 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Budimuri Aakash | CSE Portfolio</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet" />
 
-    <style>
-        :root {
-            --primary: #00f2fe;
-            --secondary: #4facfe;
-            --dark: #0a0a0a;
-            --card: rgba(255,255,255,0.05);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Space Grotesk', sans-serif;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background: linear-gradient(135deg, #0a0a0a, #111827);
-            color: white;
-            line-height: 1.6;
-        }
-
-        /* Navbar */
-        nav {
-            position: sticky;
-            top: 0;
-            background: rgba(0,0,0,0.6);
-            backdrop-filter: blur(12px);
-            padding: 15px 10%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 20px;
-            transition: 0.3s;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        nav a:hover {
-            color: var(--primary);
-        }
-
-        /* Sections */
-        section {
-            padding: 100px 10%;
-        }
-
-        h1 {
-            font-size: 3.5rem;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 10px;
-        }
-
-        h2 {
-            color: var(--primary);
-            margin-bottom: 30px;
-            font-size: 2rem;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        h2::after {
-            content: "";
-            height: 1px;
-            flex-grow: 1;
-            background: rgba(0, 242, 254, 0.2);
-        }
-
-        .hero {
-            min-height: 90vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            margin-top: 15px;
-            opacity: 0.8;
-            max-width: 600px;
-        }
-
-        /* Card */
-        .card {
-            background: var(--card);
-            padding: 40px;
-            border-radius: 20px;
-            margin-bottom: 30px;
-            backdrop-filter: blur(10px);
-            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(0,242,254,0.15);
-            border-color: var(--primary);
-        }
-
-        .project-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 15px;
-        }
-
-        .tag {
-            font-size: 0.75rem;
-            background: rgba(0,242,254,0.1);
-            color: var(--primary);
-            padding: 5px 12px;
-            border-radius: 50px;
-            border: 1px solid var(--primary);
-            font-weight: bold;
-        }
-
-        /* Skill Bars */
-        .skill-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .skill-bar {
-            margin-bottom: 20px;
-        }
-
-        .skill-bar span {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-        }
-
-        .bar {
-            width: 100%;
-            height: 8px;
-            background: #222;
-            border-radius: 20px;
-            overflow: hidden;
-        }
-
-        .progress {
-            height: 100%;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            border-radius: 20px;
-        }
-
-        /* Contact */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-        }
-
-        .contact a {
-            padding: 20px;
-            background: var(--card);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: white;
-            text-decoration: none;
-            transition: 0.3s;
-            border: 1px solid transparent;
-        }
-
-        .contact a:hover {
-            background: rgba(0,242,254,0.1);
-            border-color: var(--primary);
-            color: var(--primary);
-        }
-
-        @media (max-width: 768px) {
-            h1 { font-size: 2.5rem; }
-            section { padding: 60px 5%; }
-            nav { padding: 15px 5%; }
-            nav a { margin-left: 10px; font-size: 0.8rem; }
-        }
-    </style>
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
+    <!-- 3D background layers -->
+    <div class="bg-orbit orbit-1"></div>
+    <div class="bg-orbit orbit-2"></div>
+    <div class="bg-orbit orbit-3"></div>
 
-<nav>
-    <div><strong>AAKASH</strong></div>
-    <div>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </div>
-</nav>
-
-<section class="hero">
-    <h1>Budimuri Aakash</h1>
-    <p>Systems Thinker. Frontend Developer. Exploring the intersection of hardware and software.</p>
-</section>
-
-<section id="about">
-    <h2>About Me</h2>
-    <div class="card">
-        I am a B.Tech Computer Science student with a deep interest in software development 
-        and hardware-level optimizations. I focus on building tools that aren't just pretty, 
-        but serve a functional purpose.
-        <br><br>
-        My philosophy is simple: <strong>Logic first, Design second.</strong> I enjoy working with Web APIs 
-        (MediaDevices, Web Audio, and Fetch) to create interactive experiences that bridge the gap 
-        between the browser and physical hardware.
-    </div>
-</section>
-
-<section id="skills">
-    <h2>Technical Skills</h2>
-    <div class="skill-container">
-        <div class="skill-bar">
-            <span>HTML5 & Modern CSS</span>
-            <div class="bar"><div class="progress" style="width:90%"></div></div>
+    <nav class="nav glass">
+        <div class="logo">AAKASH</div>
+        <div class="nav-links">
+            <a href="#about" class="nav-link">About</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#journey" class="nav-link">Journey</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#contact" class="nav-link">Contact</a>
         </div>
-        <div class="skill-bar">
-            <span>JavaScript (Async/Web APIs)</span>
-            <div class="bar"><div class="progress" style="width:85%"></div></div>
-        </div>
-        <div class="skill-bar">
-            <span>Responsive System Design</span>
-            <div class="bar"><div class="progress" style="width:80%"></div></div>
-        </div>
-        <div class="skill-bar">
-            <span>Technical Problem Solving</span>
-            <div class="bar"><div class="progress" style="width:75%"></div></div>
-        </div>
-    </div>
-</section>
+    </nav>
 
-<section id="projects">
-    <h2>Featured Projects</h2>
-
-    <div class="card">
-        <div class="project-header">
-            <h3 style="font-size: 1.8rem; color: #fff;">Mobile Hardware Diagnostic Suite</h3>
-            <span class="tag">Hardware & API</span>
-        </div>
-        <p style="margin-bottom: 20px; opacity: 0.9;">
-            An advanced diagnostic tool designed for mobile devices. It features sequential network throughput testing (Up/Down), 
-            a 30-second acoustic speaker cleaner utilizing Low-Frequency Oscillators (LFO), and dual-camera sensor verification.
-        </p>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; font-size: 0.9rem; opacity: 0.8;">
-            <div>
-                <strong style="color: var(--primary);">Key Logic:</strong>
-                <ul style="margin-top: 5px; margin-left: 20px;">
-                    <li>Asynchronous Speed Diagnostics</li>
-                    <li>LFO-based Audio Pulsing</li>
-                    <li>User/Environment Camera Switching</li>
-                </ul>
+    <main>
+        <!-- HERO -->
+        <section class="hero" id="top">
+            <div class="hero-inner tilt-card glass pop-in">
+                <p class="hero-tag">CSE • Frontend • Systems Thinking</p>
+                <h1>Budimuri Aakash</h1>
+                <p class="hero-subtitle">
+                    I am a B.Tech 2nd year Computer Science student who thinks like a systems engineer
+                    and designs like a frontend developer. I explore how hardware constraints,
+                    browser capabilities, and human interaction come together to create meaningful tools.
+                </p>
+                <p class="hero-subtitle secondary">
+                    My focus is on building **practical** interfaces: performance-aware, API-driven,
+                    and engineered with logic before aesthetics.
+                </p>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn-primary">View My Work</a>
+                    <a href="#contact" class="btn-ghost">Let’s Connect</a>
+                </div>
             </div>
-            <div>
-                <strong style="color: var(--primary);">Core Tech:</strong>
-                <ul style="margin-top: 5px; margin-left: 20px;">
-                    <li>Web Audio API</li>
-                    <li>Navigator MediaDevices</li>
-                    <li>Fetch API (Sequential)</li>
-                </ul>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="about">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-grid">
+                <div class="card tilt-card glass pop-in">
+                    <h3 class="about-heading">Who I Am</h3>
+                    <p>
+                        I am currently pursuing my <strong>B.Tech in Computer Science (2nd year)</strong>,
+                        with a growing specialization in frontend development and system-level thinking.
+                        I enjoy understanding how data flows through a system – from low-level hardware
+                        constraints to high-level user interactions in the browser.
+                    </p>
+                    <br />
+                    <p>
+                        My philosophy is simple:
+                        <strong>Logic first, Design second.</strong>
+                        I believe every UI element should exist for a reason – to guide, inform,
+                        or perform. Once the logic is solid, I refine the visual layer using
+                        modern CSS, micro-interactions, and clean typography.
+                    </p>
+                </div>
+
+                <div class="card tilt-card glass pop-in delay-1">
+                    <h3 class="about-heading">What I Like Building</h3>
+                    <ul class="about-list">
+                        <li>Tools that <strong>diagnose or measure</strong> something in the real world.</li>
+                        <li>Interfaces that talk to <strong>hardware and sensors</strong> using Web APIs.</li>
+                        <li>Logic-heavy projects like <strong>games, simulations, and dashboards</strong>.</li>
+                        <li>Experiments that combine <strong>asynchronous JS</strong> with smooth UI flows.</li>
+                    </ul>
+                    <br />
+                    <p>
+                        I’m particularly interested in bridging the gap between
+                        <strong>browser capabilities</strong> (MediaDevices, Web Audio, Fetch)
+                        and <strong>human experience</strong> – doing more with the same screen.
+                    </p>
+                </div>
             </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section id="skills">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card tilt-card glass pop-in">
+                    <div class="skill-header">
+                        <span>HTML5 & Modern CSS</span>
+                        <span class="skill-percent">90%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="90"></div>
+                    </div>
+                    <p>
+                        Semantic markup, responsive layouts, CSS Grid/Flexbox,
+                        glassmorphism, 3D transforms, and component-based styling.
+                    </p>
+                </div>
+
+                <div class="skill-card tilt-card glass pop-in delay-1">
+                    <div class="skill-header">
+                        <span>JavaScript (Async & Web APIs)</span>
+                        <span class="skill-percent">85%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="85"></div>
+                    </div>
+                    <p>
+                        Asynchronous flows with <strong>Promises/async–await</strong>, Fetch,
+                        MediaDevices, Web Audio, and handling errors in real-time interactions.
+                    </p>
+                </div>
+
+                <div class="skill-card tilt-card glass pop-in delay-2">
+                    <div class="skill-header">
+                        <span>Responsive System Design</span>
+                        <span class="skill-percent">80%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="80"></div>
+                    </div>
+                    <p>
+                        Designing layouts that adapt to mobile and desktop while keeping visual
+                        hierarchy, spacing, and readability consistent.
+                    </p>
+                </div>
+
+                <div class="skill-card tilt-card glass pop-in delay-3">
+                    <div class="skill-header">
+                        <span>Problem Solving & Debugging</span>
+                        <span class="skill-percent">75%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="75"></div>
+                    </div>
+                    <p>
+                        Breaking down complex logic (like chess rules or diagnostics) into small,
+                        testable functions with clear state transitions.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- JOURNEY / TIMELINE -->
+        <section id="journey">
+            <h2 class="section-title">My Journey So Far</h2>
+            <div class="timeline">
+                <div class="timeline-item glass pop-in tilt-card">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>2024 – Present</h3>
+                        <p class="timeline-title">B.Tech CSE (2nd Year)</p>
+                        <p>
+                            Strengthening my foundations in data structures, algorithms, operating systems,
+                            and computer networks while applying them through small web and systems projects.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item glass pop-in tilt-card delay-1">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Frontend & Web APIs</h3>
+                        <p class="timeline-title">From Static Pages to Interactive Systems</p>
+                        <p>
+                            Started with basic HTML/CSS and then moved into JavaScript-driven interfaces,
+                            using Web APIs to access camera, audio, and network for more experimental projects.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item glass pop-in tilt-card delay-2">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Personal Projects</h3>
+                        <p class="timeline-title">Building Things That Feel Real</p>
+                        <p>
+                            Implemented tools like a mobile diagnostic suite and an interactive chess
+                            application to practice real-world problem solving, not just tutorial code.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects">
+            <h2 class="section-title">Featured Projects</h2>
+
+            <div class="projects-grid">
+                <article class="card project-card tilt-card glass pop-in" data-project="diagnostic">
+                    <header class="project-header">
+                        <h3>Mobile Hardware Diagnostic Suite</h3>
+                        <span class="tag">Hardware & API</span>
+                    </header>
+                    <p class="project-desc">
+                        An advanced diagnostic web tool designed for mobile devices. It performs
+                        sequential network throughput testing, audio-based speaker cleaning, and
+                        camera verification in a guided flow.
+                    </p>
+                    <div class="project-meta">
+                        <div>
+                            <strong>Key Logic</strong>
+                            <ul>
+                                <li>Asynchronous speed diagnostics</li>
+                                <li>LFO-based audio pulsing (speaker cleaner)</li>
+                                <li>User/environment camera switching</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <strong>Core Tech</strong>
+                            <ul>
+                                <li>Web Audio API</li>
+                                <li>Navigator MediaDevices</li>
+                                <li>Sequential Fetch API</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button class="btn-outline project-more">View Details</button>
+                </article>
+
+                <article class="card project-card tilt-card glass pop-in delay-1" data-project="chess">
+                    <header class="project-header">
+                        <h3>Interactive Chess Application</h3>
+                        <span class="tag tag-alt">Logic & UI</span>
+                    </header>
+                    <p class="project-desc">
+                        A fully playable chess game built in the browser, focused on correctness
+                        of rules and clarity of interaction. Emphasis on turn-based systems and
+                        state management using plain JavaScript.
+                    </p>
+                    <div class="project-meta">
+                        <div>
+                            <strong>Key Logic</strong>
+                            <ul>
+                                <li>Piece movement validation</li>
+                                <li>Turn-based game loop</li>
+                                <li>Check/checkmate detection</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <strong>Technologies</strong>
+                            <ul>
+                                <li>Vanilla JavaScript</li>
+                                <li>DOM manipulation</li>
+                                <li>CSS Grid layout</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button class="btn-outline project-more">View Details</button>
+                </article>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-grid">
+                <a class="contact-link tilt-card glass pop-in" href="mailto:aakashbudimuri@gmail.com">
+                    <span class="contact-icon">📧</span>
+                    <div>
+                        <p class="contact-label">Email</p>
+                        <p class="contact-value">aakashbudimuri@gmail.com</p>
+                    </div>
+                </a>
+
+                <a class="contact-link tilt-card glass pop-in delay-1" href="tel:+919491888425">
+                    <span class="contact-icon">📞</span>
+                    <div>
+                        <p class="contact-label">Phone</p>
+                        <p class="contact-value">+91 94918 88425</p>
+                    </div>
+                </a>
+
+                <a class="contact-link tilt-card glass pop-in delay-2" href="https://github.com/homelander-glitch" target="_blank" rel="noreferrer">
+                    <span class="contact-icon">💻</span>
+                    <div>
+                        <p class="contact-label">GitHub</p>
+                        <p class="contact-value">homelander-glitch</p>
+                    </div>
+                </a>
+
+                <a class="contact-link tilt-card glass pop-in delay-3" href="https://www.instagram.com/homelander_901/" target="_blank" rel="noreferrer">
+                    <span class="contact-icon">📸</span>
+                    <div>
+                        <p class="contact-label">Instagram</p>
+                        <p class="contact-value">@homelander_901</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer glass">
+        &copy; 2026 Budimuri Aakash • Engineered with Logic
+    </footer>
+
+    <!-- PROJECT POPUP / MODAL -->
+    <div class="modal-backdrop" id="project-modal">
+        <div class="modal glass tilt-card">
+            <button class="modal-close" id="modal-close">&times;</button>
+            <h3 id="modal-title">Project Title</h3>
+            <p id="modal-body">
+                Detailed description will appear here.
+            </p>
         </div>
     </div>
 
-    <div class="card">
-        <div class="project-header">
-            <h3 style="font-size: 1.8rem; color: #fff;">Interactive Chess Application</h3>
-            <span class="tag">Logic & UI</span>
-        </div>
-        <p style="margin-bottom: 20px; opacity: 0.9;">
-            Developed a fully playable, logic-driven Chess game. This project focuses on handling complex state transitions and implementing standard chess rules within a web environment.
-        </p>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; font-size: 0.9rem; opacity: 0.8;">
-            <div>
-                <strong style="color: var(--primary);">Key Logic:</strong>
-                <ul style="margin-top: 5px; margin-left: 20px;">
-                    <li>Piece movement validation</li>
-                    <li>Turn-based gameplay system</li>
-                    <li>Check/Checkmate detection</li>
-                </ul>
-            </div>
-            <div>
-                <strong style="color: var(--primary);">Technologies:</strong>
-                <ul style="margin-top: 5px; margin-left: 20px;">
-                    <li>Vanilla JavaScript</li>
-                    <li>DOM Manipulation</li>
-                    <li>CSS Grid Layout</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="contact" class="contact">
-    <h2>Get In Touch</h2>
-    <div class="contact-grid">
-        <a href="mailto:aakashbudimuri@gmail.com">📧 Email Me</a>
-        <a href="tel:+919491888425">📞 Call Me</a>
-        <a href="https://github.com/homelander-glitch" target="_blank">💻 GitHub</a>
-        <a href="https://www.instagram.com/homelander_901/" target="_blank">📸 Instagram</a>
-    </div>
-</section>
-
-<footer style="text-align: center; padding: 40px; opacity: 0.5; font-size: 0.8rem;">
-    &copy; 2026 Budimuri Aakash | Engineered with Logic
-</footer>
-
+    <!-- Scripts -->
+    <script src="script.js"></script>
 </body>
 </html>
