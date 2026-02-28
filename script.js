@@ -10,11 +10,12 @@ document.addEventListener('DOMContentLoaded', () => {
         body.classList.add('app-ready');
     }, 3400);
 
-    // 1. 3D tilt effect (12-degree style)
-    const tiltMax = 12;
-    const tiltCards = document.querySelectorAll('.tilt-card, .tilt-small');
+    // 1. 3D tilt effect – softer, no crazy glitches
+    const tiltMaxLarge = 7;
+    const tiltMaxSmall = 4;
+    const tiltElements = document.querySelectorAll('.tilt-card, .tilt-small');
 
-    tiltCards.forEach(card => {
+    tiltElements.forEach(card => {
         card.addEventListener('mousemove', (e) => {
             const rect = card.getBoundingClientRect();
             const x = e.clientX - rect.left;
@@ -25,34 +26,35 @@ document.addEventListener('DOMContentLoaded', () => {
             const percentX = (x - centerX) / centerX;
             const percentY = (y - centerY) / centerY;
 
-            const rotateY = percentX * tiltMax;
-            const rotateX = -percentY * tiltMax;
+            const max = card.classList.contains('tilt-small') ? tiltMaxSmall : tiltMaxLarge;
+            const rotateY = percentX * max;
+            const rotateX = -percentY * max;
 
             card.style.transform =
-                `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(0)`;
+                `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(0)`;
         });
 
         card.addEventListener('mouseleave', () => {
             card.style.transform =
-                'perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0)';
+                'perspective(900px) rotateX(0deg) rotateY(0deg) translateZ(0)';
         });
     });
 
-    // 2. Parallax background (weighted, uses existing pattern)
+    // 2. Parallax background – subtle weights
     const bgLayers = document.querySelectorAll('.bg-layer');
     document.addEventListener('mousemove', (e) => {
         const x = (e.clientX / window.innerWidth) - 0.5;
         const y = (e.clientY / window.innerHeight) - 0.5;
 
         bgLayers.forEach((layer, index) => {
-            const depth = (index + 1) * 18;
+            const depth = 10 + index * 6; // 10, 16, 22
             const moveX = -x * depth;
             const moveY = -y * depth * 0.7;
             layer.style.transform = `translate3d(${moveX}px, ${moveY}px, 0)`;
         });
     });
 
-    // 3. Scroll reveal (cinematic) + skill bar fill
+    // 3. Scroll reveal + skill bar fill
     const observer = new IntersectionObserver((entries, obs) => {
         entries.forEach(entry => {
             if (!entry.isIntersecting) return;
@@ -72,9 +74,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, { threshold: 0.18 });
 
-    document.querySelectorAll('.pop-in:not(.project-card)').forEach(el => observer.observe(el));
+    document
+        .querySelectorAll('.pop-in:not(.project-card)')
+        .forEach(el => observer.observe(el));
 
-    // 4. Waterfall reveal for projects
+    // 4. Waterfall reveal for project cards
     const projectCards = Array.from(document.querySelectorAll('.waterfall-grid .waterfall-item'));
     if (projectCards.length) {
         const waterfallObserver = new IntersectionObserver((entries, obs) => {
@@ -114,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 6. Project modal – detailed “logic in motion”
+    // 6. Project modal – logic details
     const projectModal = document.getElementById('project-modal');
     const modalTitle = document.getElementById('modal-title');
     const modalBody = document.getElementById('modal-body');
@@ -166,10 +170,14 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.addEventListener('click', () => openProjectModal(key));
     });
 
-    modalClose.addEventListener('click', closeProjectModal);
-    projectModal.addEventListener('click', (e) => {
-        if (e.target === projectModal) closeProjectModal();
-    });
+    if (modalClose) {
+        modalClose.addEventListener('click', closeProjectModal);
+    }
+    if (projectModal) {
+        projectModal.addEventListener('click', (e) => {
+            if (e.target === projectModal) closeProjectModal();
+        });
+    }
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && projectModal.classList.contains('active')) {
             closeProjectModal();
