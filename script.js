@@ -1,18 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Intro sequence: name reveal -> slide to logo -> show app
     const body = document.body;
-    const intro = document.querySelector('.intro');
 
-    // Cinematic sequence timings
+    // Intro sequence: name reveal -> slide to logo -> show app
     setTimeout(() => {
         body.classList.add('app-logo-move');
-    }, 2300); // after name fade in
+    }, 2300);
 
     setTimeout(() => {
         body.classList.add('app-ready');
-    }, 3400); // reveal app & fade intro
+    }, 3400);
 
-    // 1. 3D tilt effect (reuse logic pattern)
+    // 1. 3D tilt effect (12-degree style)
     const tiltMax = 12;
     const tiltCards = document.querySelectorAll('.tilt-card, .tilt-small');
 
@@ -40,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 2. Parallax background (reuse pattern, make weighted)
+    // 2. Parallax background (weighted, uses existing pattern)
     const bgLayers = document.querySelectorAll('.bg-layer');
     document.addEventListener('mousemove', (e) => {
         const x = (e.clientX / window.innerWidth) - 0.5;
@@ -49,12 +47,12 @@ document.addEventListener('DOMContentLoaded', () => {
         bgLayers.forEach((layer, index) => {
             const depth = (index + 1) * 18;
             const moveX = -x * depth;
-            const moveY = -y * depth * 0.7; // slightly reduced vertical weight
+            const moveY = -y * depth * 0.7;
             layer.style.transform = `translate3d(${moveX}px, ${moveY}px, 0)`;
         });
     });
 
-    // 3. Scroll reveal (cinematic, weighted) + skill bar fill
+    // 3. Scroll reveal (cinematic) + skill bar fill
     const observer = new IntersectionObserver((entries, obs) => {
         entries.forEach(entry => {
             if (!entry.isIntersecting) return;
@@ -74,7 +72,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, { threshold: 0.18 });
 
-    // All pop-in elements except project cards (handled by waterfall)
     document.querySelectorAll('.pop-in:not(.project-card)').forEach(el => observer.observe(el));
 
     // 4. Waterfall reveal for projects
@@ -87,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 projectCards.forEach((card, index) => {
                     setTimeout(() => {
                         card.classList.add('visible');
-                    }, index * 140); // staggered reveal
+                    }, index * 140);
                 });
 
                 obs.disconnect();
@@ -117,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 6. Project modal – details on click
+    // 6. Project modal – detailed “logic in motion”
     const projectModal = document.getElementById('project-modal');
     const modalTitle = document.getElementById('modal-title');
     const modalBody = document.getElementById('modal-body');
@@ -127,17 +124,17 @@ document.addEventListener('DOMContentLoaded', () => {
         diagnostic: {
             title: 'Mobile Hardware Diagnostic Suite',
             paragraphs: [
-                'This suite behaves like a small diagnostic lab, running a controlled, sequential async throughput pipeline: download and upload are measured in separate phases so you can reason about each stage independently.',
-                'For speakers, it uses the Web Audio API to drive a low-frequency oscillator (LFO) pattern designed to shake out dust or water from the grill while staying within safe bounds.',
+                'This suite behaves like a small diagnostic lab, running a controlled, sequential async throughput pipeline so download and upload are measured in distinct phases.',
+                'For speakers, it uses the Web Audio API to drive low-frequency oscillation patterns that help shake out dust or water from the grill while staying within safe limits.',
                 'Using navigator.mediaDevices, the interface walks the user through front and rear camera checks so sensors, autofocus, and exposure can be verified quickly from one place.'
             ]
         },
         chess: {
             title: 'Logic-Driven Chess Application',
             paragraphs: [
-                'The chess app is built as a rule engine first, UI second. Each move passes through a rule-validation pipeline that checks piece rules, board boundaries, collisions, and king safety.',
-                'Board state is stored in a clear structure, so the rendering layer (CSS Grid + DOM) only reflects decisions the engine already made, keeping visuals and logic in sync.',
-                'Because state and UI are decoupled, it is straightforward to extend the engine with timers, move history, or AI players without rewriting the board.'
+                'The chess app is built as a rule engine first and a UI second. Each move passes through a rule-validation pipeline that checks piece rules, board boundaries, collisions, and king safety.',
+                'Board state is stored in a clean structure, so the rendering layer (CSS Grid + DOM) simply reflects decisions already made by the engine, keeping visuals and logic synced.',
+                'Because state and UI are decoupled, it is straightforward to extend the engine with timers, move history, or AI players without rewriting the core logic.'
             ]
         }
     };
