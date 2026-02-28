@@ -1,5 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. 3D tilt effect (cards)
+    // Intro sequence: name reveal -> slide to logo -> show app
+    const body = document.body;
+    const intro = document.querySelector('.intro');
+
+    // Cinematic sequence timings
+    setTimeout(() => {
+        body.classList.add('app-logo-move');
+    }, 2300); // after name fade in
+
+    setTimeout(() => {
+        body.classList.add('app-ready');
+    }, 3400); // reveal app & fade intro
+
+    // 1. 3D tilt effect (reuse logic pattern)
     const tiltMax = 12;
     const tiltCards = document.querySelectorAll('.tilt-card, .tilt-small');
 
@@ -27,29 +40,27 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 2. Parallax background (moves with mouse)
+    // 2. Parallax background (reuse pattern, make weighted)
     const bgLayers = document.querySelectorAll('.bg-layer');
     document.addEventListener('mousemove', (e) => {
         const x = (e.clientX / window.innerWidth) - 0.5;
         const y = (e.clientY / window.innerHeight) - 0.5;
 
         bgLayers.forEach((layer, index) => {
-            const depth = (index + 1) * 15; // different depth for each
+            const depth = (index + 1) * 18;
             const moveX = -x * depth;
-            const moveY = -y * depth;
+            const moveY = -y * depth * 0.7; // slightly reduced vertical weight
             layer.style.transform = `translate3d(${moveX}px, ${moveY}px, 0)`;
         });
     });
 
-    // 3. Scroll reveal + 3D skill bar fill
+    // 3. Scroll reveal (cinematic, weighted) + skill bar fill
     const observer = new IntersectionObserver((entries, obs) => {
         entries.forEach(entry => {
             if (!entry.isIntersecting) return;
-
             const el = entry.target;
             el.classList.add('visible');
 
-            // Animate skill bars
             if (el.classList.contains('skill-card')) {
                 const fill = el.querySelector('.skill-3d-fill');
                 if (fill && !fill.dataset.filled) {
@@ -63,9 +74,50 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, { threshold: 0.18 });
 
-    document.querySelectorAll('.pop-in').forEach(el => observer.observe(el));
+    // All pop-in elements except project cards (handled by waterfall)
+    document.querySelectorAll('.pop-in:not(.project-card)').forEach(el => observer.observe(el));
 
-    // 4. Project modal popup
+    // 4. Waterfall reveal for projects
+    const projectCards = Array.from(document.querySelectorAll('.waterfall-grid .waterfall-item'));
+    if (projectCards.length) {
+        const waterfallObserver = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+
+                projectCards.forEach((card, index) => {
+                    setTimeout(() => {
+                        card.classList.add('visible');
+                    }, index * 140); // staggered reveal
+                });
+
+                obs.disconnect();
+            });
+        }, { threshold: 0.2 });
+
+        waterfallObserver.observe(projectCards[0]);
+    }
+
+    // 5. Logic Overlay / System Toggle
+    const systemToggle = document.getElementById('system-toggle');
+    const logicOverlay = document.getElementById('logic-overlay');
+
+    if (systemToggle && logicOverlay) {
+        systemToggle.addEventListener('click', () => {
+            const active = logicOverlay.classList.toggle('active');
+            body.classList.toggle('logic-on', active);
+            systemToggle.textContent = active ? 'System Toggle: ON' : 'System Toggle';
+        });
+
+        logicOverlay.addEventListener('click', (e) => {
+            if (e.target === logicOverlay) {
+                logicOverlay.classList.remove('active');
+                body.classList.remove('logic-on');
+                systemToggle.textContent = 'System Toggle';
+            }
+        });
+    }
+
+    // 6. Project modal – details on click
     const projectModal = document.getElementById('project-modal');
     const modalTitle = document.getElementById('modal-title');
     const modalBody = document.getElementById('modal-body');
@@ -75,19 +127,17 @@ document.addEventListener('DOMContentLoaded', () => {
         diagnostic: {
             title: 'Mobile Hardware Diagnostic Suite',
             paragraphs: [
-                'This project turns the browser into a lightweight diagnostic lab for mobile devices.',
-                'Network tests run in a sequential async pipeline (download → upload) instead of a single combined test, so each phase is visible. This helps understand where latency or throttling is happening.',
-                'For speakers, the Web Audio API drives low‑frequency oscillations (LFO) that help vibrate out dust or water from the grill. This is wrapped in a simple, guided UI so non‑technical users can still run it.',
-                'Using navigator.mediaDevices, the app switches between front and rear cameras to quickly check sensors, autofocus, and exposure – all from one interface.'
+                'This suite behaves like a small diagnostic lab, running a controlled, sequential async throughput pipeline: download and upload are measured in separate phases so you can reason about each stage independently.',
+                'For speakers, it uses the Web Audio API to drive a low-frequency oscillator (LFO) pattern designed to shake out dust or water from the grill while staying within safe bounds.',
+                'Using navigator.mediaDevices, the interface walks the user through front and rear camera checks so sensors, autofocus, and exposure can be verified quickly from one place.'
             ]
         },
         chess: {
-            title: 'Interactive Chess Application',
+            title: 'Logic-Driven Chess Application',
             paragraphs: [
-                'This chess app is built entirely with vanilla JavaScript and CSS Grid, focusing on correctness and clarity rather than heavy frameworks.',
-                'Each move is processed by a validation pipeline: checking basic moves, collisions, board limits, and finally king safety to detect checks and checkmates.',
-                'The board is represented in a clean data structure so that UI (pieces on screen) and state (legal moves, turn, history) never go out of sync.',
-                'Because the logic is separated from the visuals, it is easy to extend with features like timers, move history, or AI opponents in the future.'
+                'The chess app is built as a rule engine first, UI second. Each move passes through a rule-validation pipeline that checks piece rules, board boundaries, collisions, and king safety.',
+                'Board state is stored in a clear structure, so the rendering layer (CSS Grid + DOM) only reflects decisions the engine already made, keeping visuals and logic in sync.',
+                'Because state and UI are decoupled, it is straightforward to extend the engine with timers, move history, or AI players without rewriting the board.'
             ]
         }
     };
@@ -116,7 +166,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const key = card.getAttribute('data-project');
         const btn = card.querySelector('.project-more');
         if (!btn || !key) return;
-
         btn.addEventListener('click', () => openProjectModal(key));
     });
 
