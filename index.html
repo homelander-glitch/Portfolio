@@ -3,30 +3,22 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Budimuri Aakash | 3D Systems Portfolio</title>
+    <title>Budimuri Aakash | Portfolio</title>
 
-    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet" />
-
-    <!-- Styles -->
     <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <!-- 3D parallax layers -->
     <div class="bg-layer bg-layer-1"></div>
     <div class="bg-layer bg-layer-2"></div>
     <div class="bg-layer bg-layer-3"></div>
     <div class="bg-grid"></div>
 
-    <!-- Intro / Name Reveal -->
     <div class="intro">
-        <div class="intro-name">
-            BUDIMURI&nbsp;AAKASH
-        </div>
+        <div class="intro-name">BUDIMURI&nbsp;AAKASH</div>
     </div>
 
-    <!-- Main Navigation -->
-    <nav class="nav glass-strong tilt-small">
+    <nav class="nav glass">
         <div class="nav-left">
             <div class="logo">BUDIMURI AAKASH</div>
         </div>
@@ -38,17 +30,14 @@
                 <a href="#projects" class="nav-link">Projects</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </div>
-            <button id="system-toggle" class="system-toggle">
-                System Toggle
-            </button>
+            <button id="system-toggle" class="system-toggle">System Toggle</button>
         </div>
     </nav>
 
     <main>
-        <!-- HERO -->
         <section class="hero" id="top">
             <div class="hero-left">
-                <div class="hero-card glass-strong tilt-card pop-in">
+                <div class="hero-card glass tilt-card pop-in">
                     <p class="hero-label">B.Tech CSE • 2nd Year</p>
                     <h1 class="hero-title">
                         I think like a<br />
@@ -57,268 +46,217 @@
                         <span>frontend code.</span>
                     </h1>
                     <p class="hero-text">
-                        I design web experiences that understand <strong>throughput, latency,
-                        and hardware limits</strong> before they care about pixels—using browser
-                        APIs to talk to <strong>Camera</strong>, <strong>Audio</strong>, and
-                        <strong>Network</strong> devices.
+                        I care more about throughput, latency, and what the device can do than
+                        just how it looks. Camera, audio, network—I like building stuff that
+                        actually talks to hardware.
                     </p>
                     <div class="hero-actions">
-                        <a href="#projects" class="btn btn-primary">View Projects</a>
-                        <a href="#contact" class="btn btn-ghost">Contact Me</a>
+                        <a href="#projects" class="btn btn-primary">See my work</a>
+                        <a href="#contact" class="btn btn-ghost">Get in touch</a>
                     </div>
                 </div>
             </div>
 
             <div class="hero-right pop-in delay-1">
                 <div class="cube-stack">
-                    <div class="cube-face cube-main glass-strong tilt-card">
-                        <p class="cube-title">System Architect Mindset</p>
-                        <p class="cube-text">
-                            I think in data flows, latency paths, and device constraints, then
-                            map that thinking onto clean, minimal UI.
-                        </p>
+                    <div class="cube-face glass tilt-card">
+                        <p class="cube-title">Systems mindset</p>
+                        <p class="cube-text">Data flows, latency, device limits—then I make the UI match.</p>
                     </div>
-                    <div class="cube-face cube-side glass-soft tilt-card">
-                        <p class="cube-tag">Hardware-Aware</p>
-                        <p class="cube-sub">Camera · Audio · Network APIs</p>
+                    <div class="cube-face glass tilt-card">
+                        <p class="cube-tag">Web APIs</p>
+                        <p class="cube-sub">MediaDevices, Web Audio, Fetch</p>
                     </div>
-                    <div class="cube-face cube-side glass-soft tilt-card">
-                        <p class="cube-tag">Focus</p>
-                        <p class="cube-sub">Diagnostics · Engines · Interactive Tools</p>
+                    <div class="cube-face glass tilt-card">
+                        <p class="cube-tag">What I build</p>
+                        <p class="cube-sub">Diagnostics, games, tools—not just landing pages.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ABOUT -->
         <section id="about">
             <h2 class="section-title">About Me</h2>
-            <div class="grid-2">
-                <div class="card glass-soft tilt-card pop-in">
-                    <h3>Identity</h3>
+            <div class="about-blocks">
+                <div class="card glass tilt-card pop-in about-main">
+                    <h3>The identity</h3>
                     <p>
-                        Budimuri Aakash is a CSE student who bridges the gap between high-level frontend interfaces and low-level system logic. While most developers focus on pixels, Aakash focuses on throughput, latency, and hardware constraints. His work is defined by "Logic-First" engineering—building tools that communicate with Camera, Audio, and Network APIs before shaping them with a modern, glassmorphic aesthetic. From a logic-heavy Chess Engine to a Mobile Hardware Diagnostic Suite, he builds tools, not just demos.
+                        Budimuri Aakash is a CSE student who bridges the gap between high-level frontend
+                        interfaces and low-level system logic. While most developers focus on pixels,
+                        Aakash focuses on throughput, latency, and hardware constraints. His work is
+                        defined by <strong>"Logic-First"</strong> engineering—building tools that communicate
+                        with Camera, Audio, and Network APIs before shaping them with a modern, glassmorphic
+                        aesthetic. From a logic-heavy Chess Engine to a Mobile Hardware Diagnostic Suite,
+                        he builds tools, not just demos.
                     </p>
                 </div>
-
-                <div class="card glass-soft tilt-card pop-in delay-1">
-                    <h3>What That Means in Practice</h3>
+                <div class="card glass tilt-card pop-in delay-1">
+                    <h3>What I care about</h3>
+                    <p>
+                        I care more about how data flows, how long things take, and what the device can
+                        actually do than about making another pretty landing page. I use browser APIs—
+                        MediaDevices, Web Audio, Fetch—to build things that talk to hardware. Once the
+                        logic is solid and the behaviour is right, I layer on the UI: clean layout,
+                        glassmorphism, subtle motion. Logic first, design second.
+                    </p>
+                </div>
+                <div class="card glass tilt-card pop-in delay-2">
+                    <h3>What I build</h3>
                     <ul class="bullet-list">
-                        <li>Designing flows that consider <strong>latency</strong> and <strong>throughput</strong> as first-class citizens.</li>
-                        <li>Using browser APIs to turn a tab into a <strong>device-aware instrument</strong>, not just a canvas.</li>
-                        <li>Separating <strong>logic pipelines</strong> from visual layers for clarity and extendability.</li>
-                        <li>Refining visuals only after the behavior is stable and tested.</li>
+                        <li>Tools that <strong>diagnose or measure</strong> something real—network speed, speakers, cameras.</li>
+                        <li>Interfaces that use <strong>Camera, Audio, and Network APIs</strong> so the browser feels like a device console.</li>
+                        <li>Logic-heavy stuff: <strong>chess rules, state machines, async pipelines</strong>—then a clear UI on top.</li>
+                        <li>Things that work on phones and desktops without losing the point.</li>
                     </ul>
+                </div>
+                <div class="card glass tilt-card pop-in delay-3">
+                    <h3>In practice</h3>
+                    <p>
+                        I'm a B.Tech CSE 2nd year student. I spend time on DSA, OS, and networks in class,
+                        and on the side I build projects that actually run in the browser and touch real
+                        hardware. My goal isn't to stack frameworks—it's to ship tools that someone could
+                        use: a diagnostic suite for their phone, a chess game that plays by the rules.
+                        No fluff, just engineering that works.
+                    </p>
                 </div>
             </div>
         </section>
 
-        <!-- SKILLS -->
         <section id="skills">
             <h2 class="section-title">Technical Skills</h2>
             <div class="skills-grid">
-                <div class="skill-card glass-soft tilt-card pop-in">
+                <div class="skill-card glass tilt-card pop-in">
                     <div class="skill-top">
-                        <span>HTML5 & Modern CSS</span>
+                        <span>HTML5 & CSS</span>
                         <span class="skill-num">90%</span>
                     </div>
-                    <div class="skill-3d-bar">
-                        <div class="skill-3d-fill" data-progress="90"></div>
-                    </div>
-                    <p>
-                        Semantic layouts, CSS Grid/Flexbox, 3D transforms, glassmorphism, and
-                        component-level design for stable, responsive UIs.
-                    </p>
+                    <div class="skill-bar"><div class="skill-fill" data-progress="90"></div></div>
+                    <p>Layouts, grid, flexbox, a bit of 3D and glassmorphism where it fits.</p>
                 </div>
-
-                <div class="skill-card glass-soft tilt-card pop-in delay-1">
+                <div class="skill-card glass tilt-card pop-in delay-1">
                     <div class="skill-top">
-                        <span>JavaScript (Async & Web APIs)</span>
+                        <span>JavaScript & Web APIs</span>
                         <span class="skill-num">85%</span>
                     </div>
-                    <div class="skill-3d-bar">
-                        <div class="skill-3d-fill" data-progress="85"></div>
-                    </div>
-                    <p>
-                        Async/await, Promises, structured error handling, and working with Fetch,
-                        MediaDevices, and Web Audio to build hardware-aware tools.
-                    </p>
+                    <div class="skill-bar"><div class="skill-fill" data-progress="85"></div></div>
+                    <p>Async, Fetch, MediaDevices, Web Audio—stuff that talks to hardware.</p>
                 </div>
-
-                <div class="skill-card glass-soft tilt-card pop-in delay-2">
+                <div class="skill-card glass tilt-card pop-in delay-2">
                     <div class="skill-top">
-                        <span>Responsive System Design</span>
+                        <span>Responsive design</span>
                         <span class="skill-num">80%</span>
                     </div>
-                    <div class="skill-3d-bar">
-                        <div class="skill-3d-fill" data-progress="80"></div>
-                    </div>
-                    <p>
-                        Designing layouts that respect both small screens and large monitors
-                        without losing hierarchy or focus.
-                    </p>
+                    <div class="skill-bar"><div class="skill-fill" data-progress="80"></div></div>
+                    <p>Works on phone and desktop without losing the point.</p>
                 </div>
-
-                <div class="skill-card glass-soft tilt-card pop-in delay-3">
+                <div class="skill-card glass tilt-card pop-in delay-3">
                     <div class="skill-top">
-                        <span>Problem Solving & Debugging</span>
+                        <span>Problem solving</span>
                         <span class="skill-num">75%</span>
                     </div>
-                    <div class="skill-3d-bar">
-                        <div class="skill-3d-fill" data-progress="75"></div>
-                    </div>
-                    <p>
-                        Breaking down diagnostics, rules engines, and state machines into clear,
-                        testable steps that can be extended later.
-                    </p>
+                    <div class="skill-bar"><div class="skill-fill" data-progress="75"></div></div>
+                    <p>Breaking big problems into small, testable bits.</p>
                 </div>
             </div>
         </section>
 
-        <!-- JOURNEY -->
         <section id="journey">
-            <h2 class="section-title">My Journey So Far</h2>
+            <h2 class="section-title">Journey so far</h2>
             <div class="timeline">
-                <div class="timeline-item glass-soft tilt-card pop-in">
-                    <div class="timeline-line"></div>
+                <div class="timeline-item glass tilt-card pop-in">
                     <div class="timeline-dot"></div>
                     <div class="timeline-body">
-                        <p class="timeline-year">2024 – Present</p>
-                        <h3>B.Tech CSE (2nd Year)</h3>
-                        <p>
-                            Building a base in DSA, OS, CN, and DBMS, and applying those concepts
-                            directly into web projects instead of leaving them only in notes.
-                        </p>
+                        <p class="timeline-year">2024 – Now</p>
+                        <h3>B.Tech CSE (2nd year)</h3>
+                        <p>DSA, OS, networks, DB—and actually using them in side projects.</p>
                     </div>
                 </div>
-
-                <div class="timeline-item glass-soft tilt-card pop-in delay-1">
-                    <div class="timeline-line"></div>
+                <div class="timeline-item glass tilt-card pop-in delay-1">
                     <div class="timeline-dot"></div>
                     <div class="timeline-body">
-                        <p class="timeline-year">Frontend & Web APIs</p>
-                        <h3>From UI to Systems</h3>
-                        <p>
-                            Moving from static sites to systems that speak to camera, audio, and
-                            network hardware, treating the browser as a device console.
-                        </p>
+                        <p class="timeline-year">Frontend & APIs</p>
+                        <h3>From static to real tools</h3>
+                        <p>Started with HTML/CSS, then JS and APIs—camera, audio, network.</p>
                     </div>
                 </div>
-
-                <div class="timeline-item glass-soft tilt-card pop-in delay-2">
-                    <div class="timeline-line"></div>
+                <div class="timeline-item glass tilt-card pop-in delay-2">
                     <div class="timeline-dot"></div>
                     <div class="timeline-body">
-                        <p class="timeline-year">Personal Labs</p>
-                        <h3>Tools, Not Demos</h3>
-                        <p>
-                            Building a Mobile Hardware Diagnostic Suite and a Chess Engine
-                            to test real logic and constraints, not just layout skills.
-                        </p>
+                        <p class="timeline-year">Projects</p>
+                        <h3>Things that do something</h3>
+                        <p>Diagnostic suite for phones, chess in the browser—logic first.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- PROJECTS -->
         <section id="projects">
-            <h2 class="section-title">Logic in Motion</h2>
-
+            <h2 class="section-title">Projects</h2>
             <div class="projects-grid waterfall-grid">
-                <!-- Diagnostic Suite -->
-                <article class="project-card glass-strong tilt-card pop-in waterfall-item" data-project="diagnostic">
+                <article class="project-card glass tilt-card pop-in waterfall-item">
                     <header class="project-header">
                         <h3>Mobile Hardware Diagnostic Suite</h3>
-                        <span class="chip chip-blue">Diagnostics · Web APIs</span>
+                        <span class="chip chip-blue">Diagnostics</span>
                     </header>
-                    <p class="project-text">
-                        A browser-based diagnostic lab for mobile devices that treats
-                        network, audio, and camera as measurable systems—not just features.
+                    <p class="project-desc">
+                        A phone diagnostic tool I built. Tests your network speed (up and down),
+                        runs a 30s speaker cleaner using low-frequency sound, and checks both
+                        front and back cameras. Best opened on your phone.
                     </p>
-                    <div class="project-meta">
-                        <div>
-                            <strong>Logic Emphasis</strong>
-                            <ul>
-                                <li>Sequential async throughput pipeline</li>
-                                <li>LFO-based speaker cleaning</li>
-                                <li>MediaDevice sensor verification</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <strong>Core Stack</strong>
-                            <ul>
-                                <li>Web Audio API</li>
-                                <li>navigator.mediaDevices</li>
-                                <li>Fetch (controlled sequence)</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <button class="btn btn-outline project-more">Waterfall Details</button>
+                    <ul class="project-bullets">
+                        <li>Async speed test (download then upload)</li>
+                        <li>LFO-based speaker cleaner</li>
+                        <li>Camera switch + sensor check</li>
+                    </ul>
+                    <a href="https://homelander-glitch.github.io/TESTER-/" target="_blank" rel="noopener" class="btn btn-primary project-link">Open project →</a>
                 </article>
 
-                <!-- Chess App -->
-                <article class="project-card glass-strong tilt-card pop-in waterfall-item" data-project="chess">
+                <article class="project-card glass tilt-card pop-in waterfall-item delay-1">
                     <header class="project-header">
-                        <h3>Logic-Driven Chess Application</h3>
-                        <span class="chip chip-purple">Engine · UI</span>
+                        <h3>Chess (browser)</h3>
+                        <span class="chip chip-purple">Game</span>
                     </header>
-                    <p class="project-text">
-                        A fully playable chess engine focused on correctness, collision logic,
-                        and clean state transitions rendered through a minimal board UI.
+                    <p class="project-desc">
+                        Full chess game in the browser. All the rules—moves, captures,
+                        check, checkmate—in vanilla JS. No framework, just logic and a
+                        grid-based board.
                     </p>
-                    <div class="project-meta">
-                        <div>
-                            <strong>Logic Emphasis</strong>
-                            <ul>
-                                <li>Rule-validation pipeline</li>
-                                <li>Collision detection</li>
-                                <li>Clean state management</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <strong>Core Stack</strong>
-                            <ul>
-                                <li>Vanilla JavaScript</li>
-                                <li>DOM manipulation</li>
-                                <li>CSS Grid Board</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <button class="btn btn-outline project-more">Waterfall Details</button>
+                    <ul class="project-bullets">
+                        <li>Move validation + collision</li>
+                        <li>Turn-based state</li>
+                        <li>Check / checkmate detection</li>
+                    </ul>
+                    <a href="https://homelander-glitch.github.io/chess/" target="_blank" rel="noopener" class="btn btn-primary project-link">Open project →</a>
                 </article>
             </div>
         </section>
 
-        <!-- CONTACT -->
         <section id="contact">
-            <h2 class="section-title">Get In Touch</h2>
+            <h2 class="section-title">Get in touch</h2>
             <div class="contact-grid">
-                <a class="contact-card glass-soft tilt-card pop-in" href="mailto:aakashbudimuri@gmail.com">
-                    <div class="contact-icon">📧</div>
+                <a class="contact-card glass tilt-card pop-in" href="mailto:aakashbudimuri@gmail.com">
+                    <span class="contact-icon">📧</span>
                     <div>
                         <p class="contact-label">Email</p>
                         <p class="contact-value">aakashbudimuri@gmail.com</p>
                     </div>
                 </a>
-
-                <a class="contact-card glass-soft tilt-card pop-in delay-1" href="tel:+919491888425">
-                    <div class="contact-icon">📞</div>
+                <a class="contact-card glass tilt-card pop-in delay-1" href="tel:+919491888425">
+                    <span class="contact-icon">📞</span>
                     <div>
                         <p class="contact-label">Phone</p>
                         <p class="contact-value">+91 94918 88425</p>
                     </div>
                 </a>
-
-                <a class="contact-card glass-soft tilt-card pop-in delay-2" href="https://github.com/homelander-glitch" target="_blank" rel="noreferrer">
-                    <div class="contact-icon">💻</div>
+                <a class="contact-card glass tilt-card pop-in delay-2" href="https://github.com/homelander-glitch" target="_blank" rel="noopener">
+                    <span class="contact-icon">💻</span>
                     <div>
                         <p class="contact-label">GitHub</p>
                         <p class="contact-value">homelander-glitch</p>
                     </div>
                 </a>
-
-                <a class="contact-card glass-soft tilt-card pop-in delay-3" href="https://www.instagram.com/homelander_901/" target="_blank" rel="noreferrer">
-                    <div class="contact-icon">📸</div>
+                <a class="contact-card glass tilt-card pop-in delay-3" href="https://www.instagram.com/homelander_901/" target="_blank" rel="noopener">
+                    <span class="contact-icon">📸</span>
                     <div>
                         <p class="contact-label">Instagram</p>
                         <p class="contact-value">@homelander_901</p>
@@ -328,36 +266,23 @@
         </section>
     </main>
 
-    <footer class="footer glass-soft">
-        &copy; 2026 Budimuri Aakash • Engineered with Logic
+    <footer class="footer glass">
+        © 2026 Budimuri Aakash · Logic first
     </footer>
 
-    <!-- LOGIC OVERLAY -->
     <div id="logic-overlay" class="logic-overlay">
         <div class="logic-grid"></div>
-        <div class="logic-panel glass-strong tilt-card">
-            <h3>System View</h3>
-            <p class="logic-sub">CSS Grid & Performance Snapshot</p>
+        <div class="logic-panel glass">
+            <h3>System view</h3>
+            <p class="logic-sub">Layout & performance</p>
             <ul class="logic-metrics">
-                <li><span>Layout Model</span><span>CSS Grid + Flexbox Hybrid</span></li>
-                <li><span>Target FPS</span><span>60 fps (no heavy reflows)</span></li>
-                <li><span>3D Effects</span><span>GPU-backed transforms only</span></li>
-                <li><span>Input Latency</span><span>Kept low by minimal JS on scroll</span></li>
-                <li><span>Animation Style</span><span>Cubic-bezier “weighted” easing</span></li>
+                <li><span>Layout</span><span>Grid + Flexbox</span></li>
+                <li><span>Target</span><span>60fps, minimal reflow</span></li>
+                <li><span>Effects</span><span>GPU transforms, light JS</span></li>
             </ul>
         </div>
     </div>
 
-    <!-- PROJECT MODAL -->
-    <div class="modal-backdrop" id="project-modal">
-        <div class="modal glass-strong tilt-card">
-            <button class="modal-close" id="modal-close">&times;</button>
-            <h3 id="modal-title">Project Title</h3>
-            <div id="modal-body"></div>
-        </div>
-    </div>
-
-    <!-- Scripts -->
     <script src="script.js"></script>
 </body>
 </html>
