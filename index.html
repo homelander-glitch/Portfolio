@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Budimuri Aakash | Portfolio</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div class="bg-layer bg-layer-1"></div>
+    <div class="bg-layer bg-layer-2"></div>
+    <div class="bg-layer bg-layer-3"></div>
+    <div class="bg-grid"></div>
+
+    <div class="intro">
+        <div class="intro-name">BUDIMURI&nbsp;AAKASH</div>
+    </div>
+
+    <nav class="nav glass">
+        <div class="nav-left">
+            <div class="logo">BUDIMURI AAKASH</div>
+        </div>
+        <div class="nav-right">
+            <div class="nav-links">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#journey" class="nav-link">Journey</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero" id="top">
+            <div class="hero-left">
+                <div class="hero-card glass tilt-card pop-in">
+                    <p class="hero-label">B.Tech CSE · 2nd Year</p>
+                    <h1 class="hero-title">
+                        I think about<br />
+                        <span>how things work</span><br />
+                        and build it out<br />
+                        <span>in the browser.</span>
+                    </h1>
+                    <p class="hero-text">
+                        Honestly I find the system side more interesting than the visual side —
+                        how fast is it, what's the device actually capable of, where does it break.
+                        Camera, audio, network stuff. I like when the browser feels less like a webpage and more like a tool.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn btn-primary">See my work</a>
+                        <a href="#contact" class="btn btn-ghost">Get in touch</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-right pop-in delay-1">
+                <div class="cube-stack">
+                    <div class="cube-face glass tilt-card">
+                        <p class="cube-title">I think in systems</p>
+                        <p class="cube-text">I start with data flow and constraints, then figure out the UI around that.</p>
+                    </div>
+                    <div class="cube-face glass tilt-card">
+                        <p class="cube-tag">Web APIs I actually use</p>
+                        <p class="cube-sub">MediaDevices, Web Audio, Fetch</p>
+                    </div>
+                    <div class="cube-face glass tilt-card">
+                        <p class="cube-tag">What I end up making</p>
+                        <p class="cube-sub">Diagnostic tools, games, things that actually do something.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2 class="section-title">A bit about me</h2>
+            <div class="about-blocks">
+                <div class="card glass tilt-card pop-in about-main">
+                    <h3>Who I am</h3>
+                    <p>
+                        I'm Aakash, a CSE student who got into frontend but kept getting pulled toward the lower-level stuff —
+                        how the network request actually works, what the camera API gives you, why audio playback behaves
+                        differently on mobile. My projects usually start with a problem I want to solve or a thing I want to
+                        understand, not "let me make something that looks nice." The design comes after I've figured out the
+                        logic. That order matters to me.
+                    </p>
+                </div>
+                <div class="card glass tilt-card pop-in delay-1">
+                    <h3>What I actually care about</h3>
+                    <p>
+                        Honestly? Whether the thing works. Does the speed test give accurate numbers, does the chess engine
+                        catch edge cases, does it run fine on a mid-range phone. I'm not anti-design — I do spend time on
+                        layout and feel — but I'd rather have a solid tool with decent UI than a beautiful thing that doesn't
+                        really do anything.
+                    </p>
+                </div>
+                <div class="card glass tilt-card pop-in delay-2">
+                    <h3>What I end up building</h3>
+                    <ul class="bullet-list">
+                        <li>Tools that actually measure or test something — network speed, speaker health, camera info.</li>
+                        <li>Stuff that talks to browser hardware APIs so it feels less like a website.</li>
+                        <li>Logic-heavy things like chess rules, state machines, async flows — then a clean UI on top.</li>
+                        <li>Things that don't fall apart on a phone.</li>
+                    </ul>
+                </div>
+                <div class="card glass tilt-card pop-in delay-3">
+                    <h3>Day to day</h3>
+                    <p>
+                        Second year B.Tech CSE. I do DSA, OS, and networks in class and find that a lot of it shows up
+                        directly in what I build on the side. I'm not trying to collect frameworks — I want to ship things
+                        that someone could actually open and use. A diagnostic tool for their phone, a chess game that plays
+                        by real rules. That's the goal.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2 class="section-title">What I know</h2>
+            <div class="skills-grid">
+                <div class="skill-card glass tilt-card pop-in">
+                    <div class="skill-top">
+                        <span>HTML5 & CSS</span>
+                        <span class="skill-num">90%</span>
+                    </div>
+                    <div class="skill-bar"><div class="skill-fill" data-progress="90"></div></div>
+                    <p>Layouts, grid, flexbox, some 3D and glassmorphism when it actually fits.</p>
+                </div>
+                <div class="skill-card glass tilt-card pop-in delay-1">
+                    <div class="skill-top">
+                        <span>JavaScript & Web APIs</span>
+                        <span class="skill-num">85%</span>
+                    </div>
+                    <div class="skill-bar"><div class="skill-fill" data-progress="85"></div></div>
+                    <p>Async, Fetch, MediaDevices, Web Audio — the stuff that gets close to the hardware.</p>
+                </div>
+                <div class="skill-card glass tilt-card pop-in delay-2">
+                    <div class="skill-top">
+                        <span>Responsive design</span>
+                        <span class="skill-num">80%</span>
+                    </div>
+                    <div class="skill-bar"><div class="skill-fill" data-progress="80"></div></div>
+                    <p>Makes sense on a phone and on a desktop. Not just "it fits", actually works.</p>
+                </div>
+                <div class="skill-card glass tilt-card pop-in delay-3">
+                    <div class="skill-top">
+                        <span>Problem solving</span>
+                        <span class="skill-num">75%</span>
+                    </div>
+                    <div class="skill-bar"><div class="skill-fill" data-progress="75"></div></div>
+                    <p>Breaking something big into parts I can actually test and fix one at a time.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="journey">
+            <h2 class="section-title">How I got here</h2>
+            <div class="timeline">
+                <div class="timeline-item glass tilt-card pop-in">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-body">
+                        <p class="timeline-year">2024 – now</p>
+                        <h3>B.Tech CSE, 2nd year</h3>
+                        <p>DSA, OS, networks, databases in class — and finding ways to use them in actual projects.</p>
+                    </div>
+                </div>
+                <div class="timeline-item glass tilt-card pop-in delay-1">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-body">
+                        <p class="timeline-year">Getting into web</p>
+                        <h3>From static pages to real tools</h3>
+                        <p>Started with HTML and CSS, then JS, then figured out the fun part — camera, audio, network APIs.</p>
+                    </div>
+                </div>
+                <div class="timeline-item glass tilt-card pop-in delay-2">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-body">
+                        <p class="timeline-year">Projects</p>
+                        <h3>Building things with a point</h3>
+                        <p>Phone diagnostic suite, chess in the browser — both started with "can I actually make this work?"</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2 class="section-title">Things I've built</h2>
+            <div class="projects-grid waterfall-grid">
+                <article class="project-card glass tilt-card pop-in waterfall-item">
+                    <header class="project-header">
+                        <h3>Mobile Hardware Diagnostic Suite</h3>
+                        <span class="chip chip-blue">Diagnostics</span>
+                    </header>
+                    <p class="project-desc">
+                        Built this to actually test what your phone can do. Checks download and upload speed,
+                        runs a speaker cleaner using low-frequency sound for 30 seconds, and checks your
+                        front and back cameras. Works way better on a phone than a desktop — that was the whole point.
+                    </p>
+                    <ul class="project-bullets">
+                        <li>Async speed test — download, then upload</li>
+                        <li>LFO speaker cleaner (sounds weird, works)</li>
+                        <li>Camera switch + basic sensor info</li>
+                    </ul>
+                    <a href="https://homelander-glitch.github.io/TESTER-/" target="_blank" rel="noopener" class="btn btn-primary project-link">Open project →</a>
+                </article>
+
+                <article class="project-card glass tilt-card pop-in waterfall-item delay-1">
+                    <header class="project-header">
+                        <h3>Chess (browser)</h3>
+                        <span class="chip chip-purple">Game</span>
+                    </header>
+                    <p class="project-desc">
+                        Full chess in the browser, no frameworks, no libraries. Just vanilla JS and a grid.
+                        All the actual rules — legal moves, captures, check, checkmate. Took a while to get
+                        the edge cases right but that was kind of the fun part.
+                    </p>
+                    <ul class="project-bullets">
+                        <li>Proper move validation + collision logic</li>
+                        <li>Turn-based state management</li>
+                        <li>Check and checkmate detection</li>
+                    </ul>
+                    <a href="https://homelander-glitch.github.io/chess/" target="_blank" rel="noopener" class="btn btn-primary project-link">Open project →</a>
+                </article>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2 class="section-title">Say hi</h2>
+            <div class="contact-grid">
+                <a class="contact-card glass tilt-card pop-in" href="mailto:aakashbudimuri@gmail.com">
+                    <span class="contact-icon">📧</span>
+                    <div>
+                        <p class="contact-label">Email</p>
+                        <p class="contact-value">aakashbudimuri@gmail.com</p>
+                    </div>
+                </a>
+                <a class="contact-card glass tilt-card pop-in delay-1" href="tel:+919491888425">
+                    <span class="contact-icon">📞</span>
+                    <div>
+                        <p class="contact-label">Phone</p>
+                        <p class="contact-value">+91 94918 88425</p>
+                    </div>
+                </a>
+                <a class="contact-card glass tilt-card pop-in delay-2" href="https://github.com/homelander-glitch" target="_blank" rel="noopener">
+                    <span class="contact-icon">💻</span>
+                    <div>
+                        <p class="contact-label">GitHub</p>
+                        <p class="contact-value">homelander-glitch</p>
+                    </div>
+                </a>
+                <a class="contact-card glass tilt-card pop-in delay-3" href="https://www.instagram.com/homelander_901/" target="_blank" rel="noopener">
+                    <span class="contact-icon">📸</span>
+                    <div>
+                        <p class="contact-label">Instagram</p>
+                        <p class="contact-value">@homelander_901</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer glass">
+        © 2026 Budimuri Aakash · logic first
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
